@@ -1,0 +1,50 @@
+.mouse {
+    display: inline-block;
+    width: 40px;
+    height: 70px;
+    position: relative;
+    border-radius: 25px;
+    border: 2px solid #cfd8dd;
+    background-color: #fff;
+    animation: scrollDown 1.5s ease-in-out infinite;
+}
+
+.mouse .wheel {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background-color: #cfd8dd;
+    animation: scrollWheel 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes scrollWheel {
+    0% {
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        transform: translate(-50%, 10px);
+    }
+
+    100% {
+        transform: translate(-50%, 0);
+    }
+}
