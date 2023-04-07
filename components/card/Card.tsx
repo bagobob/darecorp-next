@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { useTranslation } from 'next-i18next';
+import Image from 'next/image';
 
 type Props = {
     title: string;
@@ -18,7 +19,7 @@ const Card = (props: Props) => {
         <div className='w-full' id={props.id}>
             <div className='grid md:grid-cols-2 max-w-[1240px] m-auto'>
                 <div className={`${props.order}`}>
-                    <img src={props.img} alt='web_development' />
+                    <Image src={props.img} alt='web_development' width={500} height={400} />
                 </div>
                 <div className='flex flex-col justify-center md:items-start w-full px-2'>
                     <h1 className='py-8 text-5xl md:font-bold'>{props.title}</h1>

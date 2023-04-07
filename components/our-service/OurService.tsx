@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode, faMagnifyingGlassChart, faDesktop, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'next-i18next';
 import CardIcon from '../card/CardIcon';
+import Image from 'next/image';
 
 
 const OurService = () => {
@@ -28,7 +29,7 @@ const OurService = () => {
     return (
         <div id="services" className='w-full mt-24 '>
             <div className='w-full h-[700px] bg-gray-900/90 absolute'>
-                <img className='w-full h-full object-cover mix-blend-overlay'src="/images/service.jpg" alt="service_image_background_home" />
+                <Image className='w-full h-full object-cover mix-blend-overlay'src="/images/service.jpg" alt="service_image_background_home" width={1920} height={1272} />
             </div>
 
             <div className='max-w-[1240px] mx-auto text-white relative'>

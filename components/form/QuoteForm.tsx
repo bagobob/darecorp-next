@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { ChangeEvent, FormEvent, useEffect, useState, } from 'react'
 
@@ -28,7 +29,7 @@ const QuoteForm = (props: Props) => {
                 className="relative overflow-hidden md:flex w-1/2 bg-gradient-to-tr from-blue-800 to-purple-700 i justify-around items-center hidden">
                 <div>
                     <Link href="/">
-                        <img className="w-full h-full object-contain " src="/images/darecorp.jpeg" alt="logo" />
+                        <Image className="w-full h-full object-contain " src="/images/darecorp.jpeg" alt="logo" width={1600} height={815} />
                     </Link>
                 </div>
                 <div className="absolute -bottom-32 -left-40 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>

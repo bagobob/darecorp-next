@@ -21,14 +21,12 @@ const Navbar = () => {
         setNav(!nav);
     };
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const onToggleLanguageClick = (newLocale: string) => {
         const { pathname, asPath, query } = router
         router.push({ pathname, query }, asPath, { locale: newLocale })
     }
     const { t, i18n } = useTranslation('header');
     const router = useRouter();
-    //const { asPath } = router;
     const { pathname, asPath, query } = router
 
     return (
