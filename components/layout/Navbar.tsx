@@ -88,7 +88,7 @@ const Navbar = () => {
                         onClick={() => router.push({ pathname, query }, asPath, { locale: 'en' })}>
                         EN
                     </span>
-                    <Link href="/devis">
+                    <Link href="/quote/quote-page">
                         <button className="py-3 px-8">{t('ask_quote_button')}</button>
                     </Link>
                 </li>

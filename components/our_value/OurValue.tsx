@@ -26,7 +26,7 @@ const OurValue = () => {
     return (
         <div className="w-full mb-32 bg-zinc-200">
             <div className="max-w-[1240px] mx-auto px-2">
-                <h2 className="text-5xl font-bold text-center py-16">{t('our_value_title')}</h2>
+                <h1 className="text-3xl font-bold text-center py-8 md:text-5xl">{t('our_value_title')}</h1>
                 <div className="grid lg:grid-cols-3 gap-4 pt-4">
                     {data.map((item, index) => (
                         <div className="flex flex-col items-center" key={index}>
@@ -34,7 +34,7 @@ const OurValue = () => {
                                 {item.icon}
                             </div>
                             <div className="">
-                                <h3 className="font-bold text-lg text-center">{t(item.title)}</h3>
+                                <h2 className="font-bold text-lg text-center md:text-xl pb-2">{t(item.title)}</h2>
                                 <p className="text-medium md:text-lg pt-2 pb-4">
                                     {t(item.content)}
                                 </p>

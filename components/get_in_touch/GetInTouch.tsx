@@ -1,6 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
+import Input from '../form/Input';
+import TextArea from '../form/TextArea';
+import Link from 'next/link';
 
 
 const GetInTouch = () => {
@@ -15,26 +18,72 @@ const GetInTouch = () => {
                     <h1 className="text-2xl font-bold md:text-5xl mb-[30px]">{t('get_in_touch')}</h1>
                     <form>
                         <div className="grid md:grid-cols-2 max-w-[1024px] m-auto">
-                            <div className="mr-2">
-                                <input type="text" placeholder={t('first_name') || ''} className='w-[100%] py-4 px-6 mr-4 rounded-md mb-4 outline-none' />
-                            </div>
-                            <div>
-                                <input type="text" placeholder={t('last_name') || ''} className='w-[100%] py-4 px-6 mr-4 rounded-md mb-4 outline-none' />
-                            </div>
+                            <Input
+                                id='first_name'
+                                type='text'
+                                label={'first_name'}
+                                paddingVertical='py-4'
+                                paddingHorizontal='px-6'
+                                divClassName='mr-2'
+                                required
+                                placeholder={t('first_name') || ''}
+                            />
+                            <Input
+                                id='last_name'
+                                type='text'
+                                label={'last_name'}
+                                paddingVertical='py-4'
+                                paddingHorizontal='px-6'
+                                required
+                                divClassName='mr-2'
+                                placeholder={t('last_name') || ''}
+                            />
                         </div>
                         <div className="grid md:grid-cols-2 max-w-[1024px] m-auto">
-                            <div className="mr-2">
-                                <input type="email" placeholder="Email" className='w-[100%] py-4 px-6 mr-4 rounded-md mb-4 outline-none' />
-                            </div>
+                            <Input
+                                id='email'
+                                type='email'
+                                label='Email'
+                                required
+                                paddingVertical='py-4'
+                                paddingHorizontal='px-6'
+                                divClassName='mr-2'
+                                placeholder='Email'
+                            />
+                            <Input
+                                id='phone'
+                                type='tel'
+                                label='phone_no'
+                                required
+                                paddingVertical='py-4'
+                                paddingHorizontal='px-6'
+                                divClassName='mr-2'
+                                placeholder={t('phone_no') || ''}
+                            />
+                        </div>
+                        <Input
+                            id='enterprise'
+                            type='text'
+                            label='enterprise_name'
+                            paddingVertical='py-4'
+                            required
+                            paddingHorizontal='px-6'
+                            divClassName='mr-2'
+                            placeholder={t('enterprise_name') || ''}
+                        />
+                        <div>
+                            <TextArea
+                                label='Message'
+                                id='message'
+                                rows={6}
+                                placeholder='Message'
+                            />
                             <div>
-                                <input type="tel" placeholder={t('phone_no') || ''} className='w-[100%] py-4 px-6 mr-4 rounded-md mb-4 outline-none' />
+                                <span className='block text-gray-700 font-bold mb-2'>
+                                    {t('respect_policy')}
+                                    <Link href='/legals/privacy' className='text-indigo-600'> {t('privacy_policy')}</Link>
+                                </span>
                             </div>
-                        </div>
-                        <div>
-                            <input type="text" placeholder={t('enterprise_name') || ''} className='w-[100%] py-4 px-6 mr-4 rounded-md mb-4 outline-none' />
-                        </div>
-                        <div>
-                            <textarea placeholder="Message" rows={6} className='w-[100%] py-4 px-6 mr-4 rounded-md mb-4 outline-none'></textarea>
                             <button className='py-3 px-6 sm:w-[100%] my-4'>{t('send_button')}</button>
                         </div>
                     </form>

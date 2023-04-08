@@ -2,6 +2,7 @@ import React, { ReactElement, useState } from 'react'
 import AccordionLayout from './AccordionLayout';
 import Image from 'next/image';
 
+
 type Props = {
   title: string;
   accordion1: {
@@ -20,6 +21,7 @@ type Props = {
   img: string;
 }
 
+
 const Accordion = (props: Props) => {
 
   const [activeIndex, setActiveIndex] = useState(1);
@@ -27,7 +29,7 @@ const Accordion = (props: Props) => {
     <div className='w-full '>
             <div className='grid md:grid-cols-2 max-w-[1240px] m-auto'>
                 <div className={`${props.order}`}>
-                    <Image src={props.img} alt={props.title} width={500} height={400}/>
+                    <Image className='object-contain' src={props.img}  alt={props.title} width={500} height={400}/>
                 </div>
                 <div className='flex flex-col justify-center items-center'>
                 <h1 className='py-8 text-5xl md:font-bold'>{props.title}</h1>

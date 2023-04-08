@@ -22,8 +22,8 @@ const Card = (props: Props) => {
                     <Image src={props.img} alt='web_development' width={500} height={400} />
                 </div>
                 <div className='flex flex-col justify-center md:items-start w-full px-2'>
-                    <h1 className='py-8 text-5xl md:font-bold'>{props.title}</h1>
-                    <p className='font-medium text-slate-600 mb-8'>
+                    <h1 className='text-3xl py-8 md:text-5xl md:font-bold'>{props.title}</h1>
+                    <p className='md:text-lg font-medium text-slate-600 mb-8'>
                         {t(props.firstText)}
                     </p>
                     <p className='font-medium text-slate-600 mb-8'>

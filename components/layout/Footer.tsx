@@ -8,6 +8,7 @@ import {
   faWhatsapp,
   faTwitter
 } from '@fortawesome/free-brands-svg-icons'
+import Input from '../form/Input';
 
 
 const Footer = () => {
@@ -88,7 +89,16 @@ const Footer = () => {
           <p className='font-bold uppercase'>{t('newsletter')}</p>
           <p className='py-4'>{t('latest')}</p>
           <form className='flex flex-col sm:flex-row'>
-            <input className='w-full p-2 mr-4 rounded-md mb-4' type="email" placeholder={t('enter-your-email')?? 'Email...'} />
+            <Input
+              id='newsletter_email'
+              type='email'
+              required
+              paddingVertical='py-2'
+              paddingHorizontal='px-2'
+              borderClass='border border-gray-400'
+              inputClassName='w-full p-2 mr-4 rounded-md mb-4 outline-none'
+              placeholder={t('enter-your-email') ?? 'Email...'}
+            />
             <button className='p-2 mb-4 '>{t('subscribe')}</button>
           </form>
         </div>
@@ -97,7 +107,7 @@ const Footer = () => {
       <div className='flex flex-col max-w-[1240px] px-2 py-4 mx-auto  justify-between sm:flex-row text-center text-gray-500'>
         <p className='py-4'>&copy;{currentYear} {t('copyright')}</p>
         <div className='flex justify-between sm:w-[300px] pt-4 text-2xl'>
-          <FontAwesomeIcon icon={faFacebook}  className='cursor-pointer hover:text-indigo-600 w-6' />
+          <FontAwesomeIcon icon={faFacebook} className='cursor-pointer hover:text-indigo-600 w-6' />
           <FontAwesomeIcon icon={faLinkedin} className='cursor-pointer hover:text-indigo-600 w-6' />
           <FontAwesomeIcon icon={faTwitter} className='cursor-pointer hover:text-indigo-600 w-6' />
           <FontAwesomeIcon icon={faWhatsapp} className='cursor-pointer hover:text-indigo-600 w-6' />

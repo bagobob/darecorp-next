@@ -41,7 +41,7 @@ const Benefit = (props: Props) => {
         <div className="w-full mb-16 bg-zinc-200 py-16 sm:py-16">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:text-center">
-                    <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{t('benefit_title')}</p>
+                    <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{t('benefit_title')}</h1>
                     <p className="mt-6 text-lg leading-8 text-gray-600">{t('benefit_desc')}</p>
                 </div>
                 <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">

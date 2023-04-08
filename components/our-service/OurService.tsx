@@ -11,17 +11,17 @@ const OurService = () => {
     const service_data = [
         {
             title: t('web_dev'),
-            icon: <FontAwesomeIcon icon={faCode} className='w-16 p-4 bg-indigo-600 text-white rounded-lg mt-[-4rem]' />,
+            icon: <FontAwesomeIcon icon={faCode} className='w-14 bg-indigo-600 text-white rounded-lg mt-[-3rem] md:mt-[-4rem] md:w-16 p-4' />,
             content: "web_app_our_service_content"
         },
         {   
             title: t('it_consult'),
-            icon: <FontAwesomeIcon icon={faDesktop} className='w-16 p-4 bg-indigo-600 text-white rounded-lg mt-[-4rem]' />,
+            icon: <FontAwesomeIcon icon={faDesktop} className='w-14 bg-indigo-600 text-white rounded-lg mt-[-3rem] md:mt-[-4rem] md:w-16 p-4' />,
             content: "it_consulting_our_service_content"
         },
         {
             title: t('marketing_digital'),
-            icon: <FontAwesomeIcon icon={faMagnifyingGlassChart} className='w-16 p-4 bg-indigo-600 text-white rounded-lg mt-[-4rem]' />,
+            icon: <FontAwesomeIcon icon={faMagnifyingGlassChart} className='w-14 bg-indigo-600 text-white rounded-lg mt-[-3rem] md:mt-[-4rem] md:w-16 p-4' />,
             content: "marketing_digital_our_service_content"
         }
     ];
@@ -34,9 +34,9 @@ const OurService = () => {
 
             <div className='max-w-[1240px] mx-auto text-white relative'>
                 <div className='px-4 py-12 text-center'>
-                    <h1 className='text-5xl pt-8 text-slate-300 uppercase text-center'>{t('our_service')}</h1>
-                    <h2 className='text-3xl font-bold py-6 text-center'>{t('service_subtitle')}</h2>
-                    <p className='py-4 text-2xl text-slate-300'>{t('service_content')}</p>
+                    <h1 className='text-3xl pt-8 text-slate-300 uppercase text-center md:text-5xl'>{t('our_service')}</h1>
+                    <h2 className='text-2xl font-bold py-6 text-center md:text-4xl'>{t('service_subtitle')}</h2>
+                    <p className='py-4 text-lg text-slate-300 md:text-2xl'>{t('service_content')}</p>
                 </div>
 
                 <div className='grid grid-cols-1 lg:grid-cols-3 relative gap-x-8 gap-y-16 px-4 pt-12 sm:pt-20 text-black'>
