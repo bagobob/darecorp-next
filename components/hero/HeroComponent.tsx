@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { useTranslation } from 'next-i18next';
+import Image from 'next/image';
 
 type Props = {
     title: string;
@@ -18,9 +19,10 @@ const HeroComponent = (props: Props) => {
     ]
     return (
         <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
-            <img
+            <Image
                 src={props.img}
                 alt=""
+                fill
                 className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
             />
             <svg

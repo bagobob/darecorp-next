@@ -10,7 +10,7 @@ type Props = {
     paddingHorizontal?: string;
     type: string;
     id: string;
-    label?: string;
+    label: string;
     required: boolean;
     checkbox?: boolean;
     inputClassName?: string // if this props is define, the input just take this as is className and replace the className define in the input element. 
@@ -34,7 +34,7 @@ const Input = (props: Props) => {
     return (
         <div className={props.divClassName}>
             <label htmlFor={props.id} className='block text-gray-700 font-bold mb-2'>
-                {t(props.label) || ''}
+                {t(props.label)}
             </label>
             <input
                 type={props.type}

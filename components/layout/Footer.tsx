@@ -93,9 +93,8 @@ const Footer = () => {
               id='newsletter_email'
               type='email'
               required
-              paddingVertical='py-2'
-              paddingHorizontal='px-2'
-              borderClass='border border-gray-400'
+              label=''
+              divClassName='mr-2'
               inputClassName='w-full p-2 mr-4 rounded-md mb-4 outline-none'
               placeholder={t('enter-your-email') ?? 'Email...'}
             />
