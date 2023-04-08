@@ -9,7 +9,7 @@ import Link from 'next/link';
 const GetInTouch = () => {
     const { t } = useTranslation();
     return (
-        <div className="w-full bg-zinc-200 flex flex-col justify-between p-0">
+        <div className="w-full bg-zinc-200 flex flex-col justify-between px-4 md:p-0">
             <div className="grid md:grid-cols-2 max-w-[1024px] m-auto">
                 <div>
                     <Image src="/images/contact-img.svg" width={350} height={350} alt="contactImg" className="w-[92%]" />

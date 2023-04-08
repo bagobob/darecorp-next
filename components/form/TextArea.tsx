@@ -22,7 +22,7 @@ const TextArea = (props: Props) => {
                 rows={props.rows}
                 placeholder={props.placeholder}
                 className={props.textAreaClassName ? props.textAreaClassName: 
-                    `${props.borderClass} py-4 px-6 rounded-md w-full mb-4 mr-4`}
+                    `${props.borderClass} py-4 px-6 rounded-md w-full mb-4 mr-4 outline-none`}
 
             ></textarea>
         </div>

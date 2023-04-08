@@ -19,10 +19,10 @@ const Footer = () => {
     { url: '/quote/quote-page', label: 'quote', active: false },
   ];
   const services_links = [
-    { url: '/services/service-page/#service_web_development', label: 'web', active: false },
-    { url: '/services/service-page/#service_web_development', label: 'Application', active: false },
-    { url: '/services/service-page/#service_it_consult', label: 'consulting', active: false },
-    { url: '/services/service-page/#service_marketing_digital', label: 'marketing_digital', active: false },
+    { url: '/services/service/web-development', label: 'web', active: false },
+    { url: '/services/service/web-development', label: 'Application', active: false },
+    { url: '/services/service/it-consulting', label: 'consulting', active: false },
+    { url: '/services/service/marketing-digital', label: 'marketing_digital', active: false },
   ];
   const company_links = [
     { url: '/about/about-page', label: 'apropo', active: false },

@@ -16,7 +16,7 @@ type Props = {}
 
 const webData = {
             title: 'Web Development',
-            subtitle: "",
+            subtitle: "Notre première préoccupation est de comprendre les ambitions et la stratégie de nos clients.",
             description: '',
             feature: [
                 new FeatureItem(<FontAwesomeIcon icon={faCloud} className="mt-1 h-5 w-5 flex-none text-indigo-600" aria-hidden="true"/>, "web_first_service","Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione."),
@@ -25,9 +25,9 @@ const webData = {
                 new FeatureItem(<FontAwesomeIcon icon={faCloud} className="mt-1 h-5 w-5 flex-none text-indigo-600" aria-hidden="true"/>, "web_fourth_service","Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione."),
                 new FeatureItem(<FontAwesomeIcon icon={faCloud} className="mt-1 h-5 w-5 flex-none text-indigo-600" aria-hidden="true"/>, "web_fifth_service","Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione."),
             ],
-            subDescription: '',
-            secondTitle: '',
-            secondContent: ''
+            subDescription: 'L’objectif ? Leur fournir un système d’information adapté et personnalisé. Depuis 2018, nous travaillons avec des structures agiles, aux profils diversifiés et complémentaires. Cette diversité nous permet de nous adapter à toutes les situations, quels que soient les environnements, mais aussi d’être capable de répondre efficacement aux besoins.',
+            secondTitle: 'Le résultat?',
+            secondContent: 'Des applications qui répondent aux attentes grâce à une information qui circule correctement et efficacement. Un utilisateur au centre du dispositif, informé et formé tout au long de la mise en place. Une transformation digitale réussie, aboutie et pérenne.'
 }
 
 
@@ -46,9 +46,13 @@ const Service = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
             </Head>
             <Layout>
                 <HeroComponent title={t('web_dev')} linkStats subtitle='subtitle_web_hero_component' img='/images/web.jpg' />
-                <ServiceComponent 
+                <ServiceComponent
+                subtitle={webData.subtitle}
                 title={t('web_dev')} 
-                feature={webData.feature} 
+                feature={webData.feature}
+                objective={webData.subDescription}
+                resultTitle={webData.secondTitle}
+                result={webData.secondContent}
                 img='/images/dev_web.jpg' 
                 alt='darecorp-web-development-service-page' />
                 <CtaSection />

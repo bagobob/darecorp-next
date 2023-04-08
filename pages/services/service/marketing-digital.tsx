@@ -10,23 +10,22 @@ import ServiceComponent, { FeatureItem } from '@/components/service-component/Se
 import CtaSection from '@/components/cta_section/CtaSection';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloud, faLock, faServer } from '@fortawesome/free-solid-svg-icons';
-import { serviceHeroData } from 'data/service_hero_data';
 
 
 type Props = {}
 
 const marketingDigitalData = { 
             title: 'Marketing Digital',
-            subtitle: "",
+            subtitle: "Notre rôle est d'offrir aux entreprise la possibilité de toucher un public plus large avec précision, le tout à un coût abordable.",
             description: '',
             feature: [
                 new FeatureItem(<FontAwesomeIcon icon={faCloud} className="mt-1 h-5 w-5 flex-none text-indigo-600" aria-hidden="true"/>, "marketing_first_service","Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione."),
                 new FeatureItem(<FontAwesomeIcon icon={faCloud} className="mt-1 h-5 w-5 flex-none text-indigo-600" aria-hidden="true"/>, "marketing_second_service","Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione."),
                 new FeatureItem(<FontAwesomeIcon icon={faCloud} className="mt-1 h-5 w-5 flex-none text-indigo-600" aria-hidden="true"/>, "marketing_third_service","Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione."),
             ],
-            subDescription: '',
-            secondTitle: '',
-            secondContent: ''
+            subDescription: 'L’objectif ? Leur fournir un système d’information adapté et personnalisé. Depuis 2018, nous travaillons avec des structures agiles, aux profils diversifiés et complémentaires. Cette diversité nous permet de nous adapter à toutes les situations, quels que soient les environnements, mais aussi d’être capable de répondre efficacement aux besoins.',
+            secondTitle: 'Le résultat?',
+            secondContent: 'Des applications qui répondent aux attentes grâce à une information qui circule correctement et efficacement. Un utilisateur au centre du dispositif, informé et formé tout au long de la mise en place. Une transformation digitale réussie, aboutie et pérenne.'
 }
 
 
@@ -45,7 +44,15 @@ const Service = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
             </Head>
             <Layout>
                 <HeroComponent title={t('marketing_digital')} linkStats subtitle='subtitle_marketing_hero_component' img='/images/marketing_hero_component.avif' />
-                <ServiceComponent title={t('marketing_digital')} feature={marketingDigitalData.feature} img='/images/marketing.png' alt='darecorp-marketing-digital-service-page' />
+                <ServiceComponent
+                subtitle={marketingDigitalData.subtitle}
+                title={t('marketing_digital')} 
+                feature={marketingDigitalData.feature}
+                objective={marketingDigitalData.subDescription}
+                resultTitle={marketingDigitalData.secondTitle}
+                result={marketingDigitalData.secondContent} 
+                img='/images/marketing.png' 
+                alt='darecorp-marketing-digital-service-page' />
                 <CtaSection />
             </Layout>
         </>

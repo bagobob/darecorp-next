@@ -19,6 +19,10 @@ type Props = {
     feature: Array<FeatureItem>;
     img: string | "https://tailwindui.com/img/component-images/dark-project-app-screenshot.png";
     alt: string;
+    subtitle: string;
+    result: string;
+    resultTitle: string;
+    objective: string;
 }
 
 const ServiceComponent = (props: Props) => {
@@ -57,8 +61,7 @@ const ServiceComponent = (props: Props) => {
                         <div className="lg:max-w-lg">
                             <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{props.title}</h1>
                             <p className="mt-6 text-xl leading-8 text-gray-700">
-                                Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi, nibh dui, diam
-                                eget aliquam. Quisque id at vitae feugiat egestas.
+                                {props.subtitle}
                             </p>
                         </div>
                     </div>
@@ -94,16 +97,11 @@ const ServiceComponent = (props: Props) => {
                                 }
                             </ul>
                             <p className="mt-8">
-                                Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie auctor
-                                fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices hac
-                                adipiscing egestas. Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.
+                                {props.objective}
                             </p>
-                            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">No server? No problem.</h2>
+                            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">{props.resultTitle}</h2>
                             <p className="mt-6">
-                                Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat in. Convallis arcu ipsum urna nibh.
-                                Pharetra, euismod vitae interdum mauris enim, consequat vulputate nibh. Maecenas pellentesque id sed
-                                tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi. Pellentesque nam sed nullam sed diam
-                                turpis ipsum eu a sed convallis diam.
+                            {props.result}
                             </p>
                         </div>
                     </div>
