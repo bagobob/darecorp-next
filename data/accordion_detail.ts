@@ -1,50 +1,44 @@
 export const accordionDetails = [
     {
         title: 'who_we_are_title',
-        accordion1: {
-            title: "men & women",
-            content: "With a business and process-oriented range of services, from enterprise architecture and agility through to cyber security"
-        },
-        accordion2: {
-            title: "technologist enthusiast",
-            content: "With a business and process-oriented range of services, from enterprise architecture and agility through to cyber security"
-        },
-        accordion3: {
-            title: "focus and motivated",
-            content: "With a business and process-oriented range of services, from enterprise architecture and agility through to cyber security"
-        },
-        img: "/images/and_then.png"
+        accordion: [
+            {
+                title: "who_we_are_title_1",
+                content: "who_we_are_content_1"
+            },
+            {
+                title: "who_we_are_title_2",
+                content: "who_we_are_content_2"
+            },
+        ],
+        img: "and_then.png"
     },
     {
         title: "our_goal_title",
-        accordion1: {
-            title: "business growth",
-            content: "With a business and process-oriented range of services, from enterprise architecture and agility through to cyber security"
-        },
-        accordion2: {
-            title: "digitalization",
-            content: "With a business and process-oriented range of services, from enterprise architecture and agility through to cyber security"
-        },
-        accordion3: {
-            title: "capitalization",
-            content: "With a business and process-oriented range of services, from enterprise architecture and agility through to cyber security"
-        },
-        img: "/images/what_can_we.png"
+        accordion: [
+            {
+                title: "our_goal_title_1",
+                content: "our_goal_content_1"
+            },
+            {
+                title: "our_goal_title_2",
+                content: "our_goal_content_2"
+            },
+        ],
+        img: "what_can_we.png"
     },
     {
         title: "with_what_title",
-        accordion1: {
-            title: "technology of tomorrow",
-            content: "With a business and process-oriented range of services, from enterprise architecture and agility through to cyber security"
-        },
-        accordion2: {
-            title: "society of tomorrow",
-            content: "With a business and process-oriented range of services, from enterprise architecture and agility through to cyber security"
-        },
-        accordion3: {
-            title: "the future",
-            content: "With a business and process-oriented range of services, from enterprise architecture and agility through to cyber security"
-        },
-        img: "/images/who_we_are.png"
+        accordion: [
+            {
+                title: "with_what_title_1",
+                content: "with_what_content_1"
+            },
+            {
+                title: "with_what_title_2",
+                content: "with_what_content_2"
+            },
+        ],
+        img: "who_we_are.png"
     },
 ]

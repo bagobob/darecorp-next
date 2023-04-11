@@ -12,17 +12,17 @@ const OurService = () => {
         {
             title: t('web_dev'),
             icon: <FontAwesomeIcon icon={faCode} className='w-14 bg-indigo-600 text-white rounded-lg mt-[-3rem] md:mt-[-4rem] md:w-16 p-4' />,
-            content: "web_app_our_service_content"
+            content: "web_app_our_service_content",
         },
         {   
             title: t('it_consult'),
             icon: <FontAwesomeIcon icon={faDesktop} className='w-14 bg-indigo-600 text-white rounded-lg mt-[-3rem] md:mt-[-4rem] md:w-16 p-4' />,
-            content: "it_consulting_our_service_content"
+            content: "it_consulting_our_service_content",
         },
         {
             title: t('marketing_digital'),
             icon: <FontAwesomeIcon icon={faMagnifyingGlassChart} className='w-14 bg-indigo-600 text-white rounded-lg mt-[-3rem] md:mt-[-4rem] md:w-16 p-4' />,
-            content: "marketing_digital_our_service_content"
+            content: "marketing_digital_our_service_content",
         }
     ];
 

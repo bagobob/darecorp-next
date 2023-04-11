@@ -30,7 +30,8 @@ const Card = (props: Props) => {
                         {t(props.secondText)}
                     </p>
                     <div className="flex items-center justify-center gap-x-6 lg:justify-start">
-                        <Link href={`/services/service/${props.link}`}>
+                        {/* <Link href={`/services/service/${props.link}`}> */}
+                        <Link href="/contacts/contact-page#contact_us">
                             <button className="py-3 px-6 my-4">
                                 {t('more_info')}
                             </button>

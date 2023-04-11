@@ -2,18 +2,21 @@ import Header from '@/components/hero/Header'
 import Layout from '@/components/layout/Layout'
 import React from 'react';
 import { useTranslation } from 'next-i18next';
-import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 import Transition from '@/components/transition/Transition';
-import OurValue from '@/components/our_value/OurValue';
-import { accordionDetails } from 'data/accordion_detail';
+import {AccordionLayoutItem} from 'pages/api/accordion';
 import Accordion from '@/components/accordeon/Accordion';
 import CtaSection from '@/components/cta_section/CtaSection';
+import bgAbout from "@/public/images/bg_about.png";
+import OurValue from '@/components/our_value/OurValue';
 
-type Props = {}
+type Props = {
+  data: any;
+}
 
-const AboutPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const AboutPage = ({data}: Props) => {
   const { t } = useTranslation();
   return (
     <>
@@ -26,21 +29,10 @@ const AboutPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
       </Head>
       <Layout>
         <>
-          <Header title={t('about_title')} firstSentence={t("about_firstSentence")} secondSentence={t("about_secondSentence")} alt="about_header_image" img="/images/bg_about.png" width={615} height={406} />
+          <Header title={t('about_title')} firstSentence={t("about_firstSentence")} secondSentence={t("about_secondSentence")} alt="about_header_image" img={bgAbout} width={615} height={406} />
           <Transition bgColor="bg-slate-900" textColor="text-white" transition_content="transition_text_about" transition_title={'transition_title_other'} />
           <OurValue />
-          {accordionDetails && accordionDetails.map((item,index)=>(
-            <Accordion 
-              key={`${item.title}_${index}`}
-              title={t(item.title)}
-              img={item.img}
-              accordion1={item.accordion1}
-              accordion2={item.accordion2}
-              accordion3={item.accordion3}
-              order={index%2 !== 0 ? "md:order-last": ""}
-            />
-          ))
-          }
+          <Accordion accordion={data} />
           <CtaSection />
         </>
       </Layout>
@@ -50,17 +42,20 @@ const AboutPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
 }
 
 // or getServerSideProps: GetServerSideProps<Props> = async ({ locale })
-export const getStaticProps: GetStaticProps<Props> = async ({
-  locale,
-}) => ({
-  props: {
-    ...(await serverSideTranslations(locale ?? ('fr' || 'en'), [
-      'common',
-      'header',
-      'footer',
-      'about',
-    ])),
-  },
-})
+export const getStaticProps: GetStaticProps<Props> = async ({locale}) => {
+    const res = await fetch('http://localhost:3000/api/accordion');
+    const data: AccordionLayoutItem[] = await res.json();
+  return{
+    props: {
+      data,
+      ...(await serverSideTranslations(locale ?? ('fr' || 'en'), [
+        'common',
+        'header',
+        'footer',
+        'about',
+      ])),
+    },
+  }  
+}
 
 export default AboutPage

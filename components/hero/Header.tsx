@@ -1,13 +1,13 @@
 import React from 'react';
 import { useTranslation} from 'next-i18next';
 import Scroll from '../scroll/Scroll';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 type Props = {
     title: string;
     firstSentence: string;
     secondSentence: string;
-    img: string;
+    img: StaticImageData;
     alt: string;
     width?: number;
     height?: number;

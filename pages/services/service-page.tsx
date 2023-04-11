@@ -10,6 +10,7 @@ import CtaSection from '@/components/cta_section/CtaSection';
 import { cardDetails } from 'data/card_details';
 import Card from '@/components/card/Card';
 import Benefit from '@/components/benefits/Benefit';
+import bgService from "@/public/images/bg_service.png"
 
 type Props = {}
 
@@ -26,7 +27,7 @@ const ServicePage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => 
       </Head>
       <Layout>
         <>
-          <Header title={t('service_title')} firstSentence={t("service_firstSentence")} secondSentence={t("service_secondSentence")} alt="service_header_image" img="/images/bg_service.png" width={541} height={461} />
+          <Header title={t('service_title')} firstSentence={t("service_firstSentence")} secondSentence={t("service_secondSentence")} alt="service_header_image" img={bgService} width={541} height={461} />
           <Transition bgColor="bg-slate-900" textColor="text-white" transition_content="transition_text_service" transition_title={'transition_title_other'} />
           <Benefit />
           {cardDetails && cardDetails.map((item, index) => (

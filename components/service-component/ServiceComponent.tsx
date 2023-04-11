@@ -1,31 +1,17 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
+import { FeatureItem, ServiceItem } from 'pages/api/service';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCloud, faLock, faServer } from '@fortawesome/free-solid-svg-icons';
 
-export class FeatureItem {
-    icon: ReactNode;
-    title: string;
-    description: string;
-
-    constructor(icon: ReactNode, title: string, description: string) {
-        this.icon = icon;
-        this.title = title;
-        this.description = description
-    }
-}
 
 type Props = {
-    title: string;
-    feature: Array<FeatureItem>;
-    img: string | "https://tailwindui.com/img/component-images/dark-project-app-screenshot.png";
-    alt: string;
-    subtitle: string;
-    result: string;
-    resultTitle: string;
-    objective: string;
+   service: ServiceItem;
+   features: FeatureItem[];
 }
 
-const ServiceComponent = (props: Props) => {
+const ServiceComponent = ({service, features}: Props) => {
     const { t } = useTranslation('service');
     return (
         <div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
@@ -59,9 +45,9 @@ const ServiceComponent = (props: Props) => {
                 <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
                     <div className="lg:pr-4">
                         <div className="lg:max-w-lg">
-                            <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{props.title}</h1>
+                            <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{service.title}</h1>
                             <p className="mt-6 text-xl leading-8 text-gray-700">
-                                {props.subtitle}
+                                {service.subtitle}
                             </p>
                         </div>
                     </div>
@@ -69,8 +55,8 @@ const ServiceComponent = (props: Props) => {
                 <div className="-mt-12 -ml-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
                     <Image
                         className="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
-                        src={props.img}
-                        alt={props.alt}
+                        src={`/images/${service.img}`}
+                        alt={service.alt}
                         width={960}
                         height={720}
                     />
@@ -79,15 +65,12 @@ const ServiceComponent = (props: Props) => {
                     <div className="lg:pr-4">
                         <div className="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
                             <p>
-                                Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet
-                                vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque
-                                erat velit. Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris
-                                semper sed amet vitae sed turpis id.
+                            {service.subDescription}
                             </p>
                             <ul className="mt-8 space-y-8 text-gray-600">
-                                {props.feature && props.feature.map((item, index) => (
+                                {features && features.map((item, index) => (
                                     <li className="flex gap-x-3" key={index}>
-                                        {item.icon}
+                                        <FontAwesomeIcon icon={item.icon} className="mt-1 h-5 w-5 flex-none text-indigo-600" aria-hidden="true"/>
                                         <span>
                                             <strong className="font-semibold text-gray-900">{t(item.title)}</strong> {item.description}
                                         </span>
@@ -96,12 +79,9 @@ const ServiceComponent = (props: Props) => {
 
                                 }
                             </ul>
-                            <p className="mt-8">
-                                {props.objective}
-                            </p>
-                            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">{props.resultTitle}</h2>
+                            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">{service.secondTitle}</h2>
                             <p className="mt-6">
-                            {props.result}
+                            {service.secondContent}
                             </p>
                         </div>
                     </div>

@@ -7,6 +7,7 @@ import Layout from '@/components/layout/Layout';
 import Header from '@/components/hero/Header';
 import ContactTransition from '@/components/transition/ContactTransition';
 import Form from '@/components/form/Form';
+import bgContact from "@/public/images/bg_contact.png";
 
 type Props = {}
 
@@ -23,7 +24,7 @@ const ContactPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => 
       </Head>
       <Layout>
         <>
-        <Header title={t('contact_title')} firstSentence={t("contact_firstSentence")} secondSentence={t("contact_secondSentence")} alt="contact_header_image" img="/images/bg_contact.png" width={612} height={408} />
+        <Header title={t('contact_title')} firstSentence={t("contact_firstSentence")} secondSentence={t("contact_secondSentence")} alt="contact_header_image" img={bgContact} width={612} height={408} />
         <ContactTransition />
         <Form />
         </>
