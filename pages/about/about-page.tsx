@@ -11,10 +11,14 @@ import Accordion from '@/components/accordeon/Accordion';
 import CtaSection from '@/components/cta_section/CtaSection';
 import bgAbout from "@/public/images/bg_about.png";
 import OurValue from '@/components/our_value/OurValue';
+import getConfig from 'next/config';
 
 type Props = {
   data: any;
 }
+
+const { publicRuntimeConfig } = getConfig();
+const apiUrl = publicRuntimeConfig.API_URL;
 
 const AboutPage = ({data}: Props) => {
   const { t } = useTranslation();
@@ -43,7 +47,6 @@ const AboutPage = ({data}: Props) => {
 
 // or getServerSideProps: GetServerSideProps<Props> = async ({ locale })
 export const getStaticProps: GetStaticProps<Props> = async ({locale}) => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL; 
     const res = await fetch(`${apiUrl}/api/accordion`);
     const data: AccordionLayoutItem[] = await res.json();
   return{

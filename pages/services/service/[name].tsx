@@ -8,11 +8,15 @@ import HeroComponent from '@/components/hero/HeroComponent';
 import ServiceComponent from '@/components/service-component/ServiceComponent';
 import CtaSection from '@/components/cta_section/CtaSection';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import getConfig from 'next/config';
 
 type Props = {
     service: any;
     features: any
 }
+
+const { publicRuntimeConfig } = getConfig();
+const apiUrl = publicRuntimeConfig.API_URL;
 
 const Service = ({service, features}: Props) => {
     const { t } = useTranslation();
@@ -35,7 +39,6 @@ const Service = ({service, features}: Props) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL; 
     const res = await fetch(`${apiUrl}/api/service`);
     const services: ServiceItem[] = await res.json();;
     const paths = services.map(item => {
@@ -51,8 +54,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async ({params, locale}) => {
-    const name = params!.name as string;
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL; 
+    const name = params!.name as string; 
     const res = await fetch(`${apiUrl}/api/service`);
     const data: ServiceItem[] = await res.json();
     const service: ServiceItem = data.filter((item) => item.name == name)[0]
