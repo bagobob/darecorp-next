@@ -35,7 +35,8 @@ const Service = ({service, features}: Props) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const res = await fetch('http://localhost:3000/api/service');
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL; 
+    const res = await fetch(`${apiUrl}/api/service`);
     const services: ServiceItem[] = await res.json();;
     const paths = services.map(item => {
         return {
