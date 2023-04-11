@@ -2,7 +2,7 @@ import Header from '@/components/hero/Header'
 import Layout from '@/components/layout/Layout'
 import React from 'react';
 import { useTranslation } from 'next-i18next';
-import { GetStaticProps } from 'next';
+import { GetServerSideProps, GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 import Transition from '@/components/transition/Transition';
@@ -46,7 +46,7 @@ const AboutPage = ({data}: Props) => {
 }
 
 // or getServerSideProps: GetServerSideProps<Props> = async ({ locale })
-export const getStaticProps: GetStaticProps<Props> = async ({locale}) => {
+export const getServerSideProps: GetServerSideProps<Props> = async ({locale}) => {
     const res = await fetch(`${apiUrl}/api/accordion`);
     const data: AccordionLayoutItem[] = await res.json();
   return{
@@ -58,6 +58,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({locale}) => {
         'footer',
         'about',
       ])),
+      fallback: false,
     },
   }  
 }
