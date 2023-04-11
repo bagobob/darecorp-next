@@ -50,8 +50,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async ({params, locale}) => {
-    const name = params!.name as string; 
-    const res = await fetch('http://localhost:3000/api/service');
+    const name = params!.name as string;
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL; 
+    const res = await fetch(`${apiUrl}/api/service`);
     const data: ServiceItem[] = await res.json();
     const service: ServiceItem = data.filter((item) => item.name == name)[0]
     const features: FeatureItem[] = service.feature

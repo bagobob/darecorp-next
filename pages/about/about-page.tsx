@@ -43,7 +43,8 @@ const AboutPage = ({data}: Props) => {
 
 // or getServerSideProps: GetServerSideProps<Props> = async ({ locale })
 export const getStaticProps: GetStaticProps<Props> = async ({locale}) => {
-    const res = await fetch('http://localhost:3000/api/accordion');
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL; 
+    const res = await fetch(`${apiUrl}/api/accordion`);
     const data: AccordionLayoutItem[] = await res.json();
   return{
     props: {
