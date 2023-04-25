@@ -1,8 +1,9 @@
 import React, { ReactElement, useState } from 'react'
 import AccordionLayout from './AccordionLayout';
 import Image from 'next/image';
-import { AccordionLayoutItem } from 'pages/api/accordion';
+
 import { useTranslation } from 'next-i18next';
+import { AccordionLayoutItem } from 'types/type';
 
 type Props = {
   accordion: Array<AccordionLayoutItem>;

@@ -23,3 +23,14 @@ export type ServiceItem = {
     img: string;
     alt: string;
 }
+
+export type AccordionItem = {
+    title: string;
+    content: string;
+}
+
+export type AccordionLayoutItem = {
+    title: string;
+    accordion: Array<AccordionItem>
+    img: string;
+}
