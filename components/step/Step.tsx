@@ -62,7 +62,7 @@ const Step = () => {
                 }
             </div>
             <div className="text-center">
-                <Link href="/contacts/contact-page">
+                <Link href="/contact">
                 <button
                     className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                 >

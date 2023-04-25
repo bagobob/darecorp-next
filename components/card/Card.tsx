@@ -7,7 +7,7 @@ type Props = {
     title: string;
     firstText: string;
     secondText: string;
-    link: string;
+    slug: string;
     img: string;
     order: string;
     id: string;
@@ -31,12 +31,12 @@ const Card = (props: Props) => {
                     </p>
                     <div className="flex items-center justify-center gap-x-6 lg:justify-start">
                         {/* <Link href={`/services/service/${props.link}`}> */}
-                        <Link href="/contacts/contact-page#contact_us">
+                        <Link href={`/services/service/${props.slug}`}>
                             <button className="py-3 px-6 my-4">
                                 {t('more_info')}
                             </button>
                         </Link>
-                        <Link href="/quote/quote-page" className="text-sm font-semibold leading-6">{t('quote_ask')} <span aria-hidden="true">→</span></Link>
+                        <Link href="/quote" className="text-sm font-semibold leading-6">{t('quote_ask')} <span aria-hidden="true">→</span></Link>
                     </div>
                 </div>
             </div>

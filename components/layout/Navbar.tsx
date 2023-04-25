@@ -8,9 +8,9 @@ import { useRouter } from "next/router";
 
 const links = [
     { url: '/', label: 'home', active: true },
-    { url: '/services/service-page', label: 'service', active: false },
-    { url: '/contacts/contact-page', label: 'contact', active: false },
-    { url: '/about/about-page', label: 'about', active: false },
+    { url: '/services', label: 'service', active: false },
+    { url: '/contact', label: 'contact', active: false },
+    { url: '/about', label: 'about', active: false },
 ];
 
 
@@ -56,7 +56,7 @@ const Navbar = () => {
                     <span className={`px-8 py-3 cursor-pointer ${i18n.language === 'en' ? 'text-indigo-600' : 'bg-transparent text-black'
                         }`}
                         onClick={() => onToggleLanguageClick('en')}>EN</span>
-                    <Link href="/quote/quote-page">
+                    <Link href="/quote">
                         <button className='py-3 px-3'>{t('ask_quote_button')}</button>
                     </Link>
                 </div>
@@ -88,7 +88,7 @@ const Navbar = () => {
                         onClick={() => router.push({ pathname, query }, asPath, { locale: 'en' })}>
                         EN
                     </span>
-                    <Link href="/quote/quote-page">
+                    <Link href="/quote">
                         <button className="py-3 px-8">{t('ask_quote_button')}</button>
                     </Link>
                 </li>

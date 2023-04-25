@@ -10,21 +10,34 @@ type Props = {
     paddingHorizontal?: string;
     type: string;
     id: string;
+    name?: string;
     label: string;
     required: boolean;
     checkbox?: boolean;
+    radio?: boolean;
     inputClassName?: string // if this props is define, the input just take this as is className and replace the className define in the input element. 
 }
 
 const Input = (props: Props) => {
     const { t } = useTranslation();
     if (props.checkbox) {
-        return(
-            
+        return(    
         <div className={props.divClassName}>
             <input type="checkbox" 
                 className="block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600"
                 name={props.id}
+                id={props.id}   
+            />
+            <label htmlFor={props.id} className='text-gray-700 font-bold'>{props.label}</label>
+        </div>
+        )
+    }
+    if (props.radio) {
+        return(    
+        <div className={props.divClassName}>
+            <input type="radio" 
+                className="block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600"
+                name={props.name}
                 id={props.id}   
             />
             <label htmlFor={props.id} className='text-gray-700 font-bold'>{props.label}</label>

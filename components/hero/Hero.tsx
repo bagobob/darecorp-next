@@ -10,18 +10,13 @@ import Scroll from '../scroll/Scroll';
 const elements_array = [
     {
         icon: <FontAwesomeIcon icon={faCode} className='h-8 text-indigo-600  px-4 py-2 ' />,
-        label: 'web_dev',
-        href: "/services/service-page/#service_web_development"
-    },
-    {
-        icon: <FontAwesomeIcon icon={faDesktop} className='h-8 text-indigo-600  px-4 py-2 ' />,
-        label: 'it_consult',
-        href: "/services/service-page/#service_it_consult"
+        label: 'web_app',
+        href: "/services#service_web_development"
     },
     {
         icon: <FontAwesomeIcon icon={faMagnifyingGlassChart} className='h-8 text-indigo-600  px-4 py-2 ' />,
         label: 'marketing_digital',
-        href: "/services/service-page/#service_marketing_digital"
+        href: "/services#service_marketing_digital"
     }
     
 ]
@@ -35,7 +30,7 @@ return (
                 <p className='text-xl pt-24 md:text-2xl'>{t('hero_first_p')}</p>
                 <h1 className='py-3 text-4xl md:text-7xl font-bold'>{t('hero_h1')}</h1>
                 <p className='text-xl md:text-2xl'>{t('hero_second_p')}</p>
-                    <Link href="/contacts/contact-page" className='sm:w-[60%] my-4' >
+                    <Link href="/contact" className='sm:w-[60%] my-4' >
                         <button className='py-3 px-6'>{t('contact_us_button')}</button>
                     </Link>
                 

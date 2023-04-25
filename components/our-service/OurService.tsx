@@ -10,18 +10,13 @@ const OurService = () => {
     const { t } = useTranslation();
     const service_data = [
         {
-            title: t('web_dev'),
-            icon: <FontAwesomeIcon icon={faCode} className='w-14 bg-indigo-600 text-white rounded-lg mt-[-3rem] md:mt-[-4rem] md:w-16 p-4' />,
+            title: t('web_app'),
+            icon: <FontAwesomeIcon icon={faCode} className='w-8 bg-indigo-600 text-white rounded-lg mt-[-3rem] md:mt-[-4rem] md:w-12 p-4' />,
             content: "web_app_our_service_content",
-        },
-        {   
-            title: t('it_consult'),
-            icon: <FontAwesomeIcon icon={faDesktop} className='w-14 bg-indigo-600 text-white rounded-lg mt-[-3rem] md:mt-[-4rem] md:w-16 p-4' />,
-            content: "it_consulting_our_service_content",
         },
         {
             title: t('marketing_digital'),
-            icon: <FontAwesomeIcon icon={faMagnifyingGlassChart} className='w-14 bg-indigo-600 text-white rounded-lg mt-[-3rem] md:mt-[-4rem] md:w-16 p-4' />,
+            icon: <FontAwesomeIcon icon={faMagnifyingGlassChart} className='w-8 bg-indigo-600 text-white rounded-lg mt-[-3rem] md:mt-[-4rem] md:w-12 p-4' />,
             content: "marketing_digital_our_service_content",
         }
     ];
@@ -39,7 +34,7 @@ const OurService = () => {
                     <p className='py-4 text-lg text-slate-300 md:text-2xl'>{t('service_content')}</p>
                 </div>
 
-                <div className='grid grid-cols-1 lg:grid-cols-3 relative gap-x-8 gap-y-16 px-4 pt-12 sm:pt-20 text-black'>
+                <div className='grid grid-cols-1 lg:grid-cols-2 relative gap-x-8 gap-y-8 px-4 pt-12 sm:pt-20 text-black'>
                     {service_data && service_data.map((item, index) => (
                         <CardIcon
                             key={`${item.title}_${index}`}

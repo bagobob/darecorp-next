@@ -6,7 +6,9 @@ export default function Document() {
   const currentLocale = i18nextConfig.i18n.defaultLocale
   return (
     <Html lang={currentLocale}>
-      <Head />
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body>
         <Main />
         <NextScript />

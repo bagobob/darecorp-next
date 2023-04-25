@@ -11,10 +11,10 @@ const CtaSection = () => {
                 <h2 className="text-3xl font-bold tracking-tight  sm:text-4xl">{t('cta_title')}.<br />{t('cta_title_second')}</h2>
                 <p className="mt-6 text-lg leading-8">{t('cta_desc')}</p>
                 <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-                    <Link href="/quote/quote-page">
+                    <Link href="/quote">
                         <button className='py-2.5 px-3.5 my-4'>{t('ask_quote_button')}</button>
                     </Link>
-                    <Link href="/contacts/contact-page" className="text-sm font-semibold leading-6">{t('learn_more')} <span aria-hidden="true">→</span></Link>
+                    <Link href="/contact" className="text-sm font-semibold leading-6">{t('learn_more')} <span aria-hidden="true">→</span></Link>
                 </div>
             </div>
         </div>

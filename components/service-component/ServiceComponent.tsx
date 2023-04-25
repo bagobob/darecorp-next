@@ -1,17 +1,17 @@
 import React from 'react';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
-import { FeatureItem, ServiceItem } from 'pages/api/service';
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCloud, faLock, faServer } from '@fortawesome/free-solid-svg-icons';
+import { ServiceItem, FeatureItem } from 'types/type';
 
 
 type Props = {
-   service: ServiceItem;
-   features: FeatureItem[];
+    service: ServiceItem;
+    features: FeatureItem[];
 }
 
-const ServiceComponent = ({service, features}: Props) => {
+const ServiceComponent = ({ service, features }: Props) => {
     const { t } = useTranslation('service');
     return (
         <div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
@@ -45,9 +45,9 @@ const ServiceComponent = ({service, features}: Props) => {
                 <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
                     <div className="lg:pr-4">
                         <div className="lg:max-w-lg">
-                            <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{service.title}</h1>
+                            <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{t(service.title)}</h1>
                             <p className="mt-6 text-xl leading-8 text-gray-700">
-                                {service.subtitle}
+                                {t(service.subtitle)}
                             </p>
                         </div>
                     </div>
@@ -64,24 +64,21 @@ const ServiceComponent = ({service, features}: Props) => {
                 <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
                     <div className="lg:pr-4">
                         <div className="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
-                            <p>
-                            {service.subDescription}
-                            </p>
                             <ul className="mt-8 space-y-8 text-gray-600">
                                 {features && features.map((item, index) => (
                                     <li className="flex gap-x-3" key={index}>
-                                        <FontAwesomeIcon icon={item.icon} className="mt-1 h-5 w-5 flex-none text-indigo-600" aria-hidden="true"/>
+                                        <FontAwesomeIcon icon={item.icon} className="mt-1 h-5 w-5 flex-none text-indigo-600" aria-hidden="true" />
                                         <span>
-                                            <strong className="font-semibold text-gray-900">{t(item.title)}</strong> {item.description}
+                                            <strong className="font-semibold text-gray-900">{t(item.title)}</strong> {t(item.description)}
                                         </span>
                                     </li>
                                 ))
 
                                 }
                             </ul>
-                            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">{service.secondTitle}</h2>
+                            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">{t(service.secondTitle)}</h2>
                             <p className="mt-6">
-                            {service.secondContent}
+                                {t(service.secondContent)}
                             </p>
                         </div>
                     </div>

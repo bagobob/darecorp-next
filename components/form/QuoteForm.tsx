@@ -109,7 +109,7 @@ const QuoteForm = (props: Props) => {
                         <div className='flex flex-row gap-4'>
                             {checkbox_array && checkbox_array.map((item, index) => (
                                 <Input
-                                key={`${item.label}_${index}`}
+                                    key={`${item.label}_${index}`}
                                     checkbox
                                     id={item.id}
                                     divClassName='flex items-center justify-center gap-x-2'

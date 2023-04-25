@@ -14,9 +14,9 @@ import Input from '../form/Input';
 const Footer = () => {
   const quick_links = [
     { url: '/', label: 'home', active: true },
-    { url: '/services/service-page', label: 'service', active: false },
-    { url: '/contacts/contact-page', label: 'contact', active: false },
-    { url: '/quote/quote-page', label: 'quote', active: false },
+    { url: '/services', label: 'service', active: false },
+    { url: '/contact', label: 'contact', active: false },
+    { url: '/quote', label: 'quote', active: false },
   ];
   const services_links = [
     { url: '/services/service/web-development', label: 'web', active: false },
@@ -25,16 +25,16 @@ const Footer = () => {
     { url: '/services/service/marketing-digital', label: 'marketing_digital', active: false },
   ];
   const company_links = [
-    { url: '/about/about-page', label: 'apropo', active: false },
-    { url: '/contacts/contact-page', label: 'join', active: false },
-    { url: '/contacts/contact-page', label: 'help', active: false },
+    { url: '/about', label: 'apropo', active: false },
+    { url: '/contact', label: 'join', active: false },
+    { url: '/contact', label: 'help', active: false },
     { url: '/valoris', label: 'ecommerce', active: false },
   ];
   const legal_links = [
-    { url: '/legals/privacy', label: 'privacy', active: true },
-    { url: '/legals/legal-notice', label: 'legal_notice', active: false },
-    { url: '/legals/data-protection', label: 'data_protection', active: false },
-    { url: '/legals/cookies', label: 'cookies', active: false },
+    { url: '#', label: 'privacy', active: true },
+    { url: '#', label: 'legal_notice', active: false },
+    { url: '#', label: 'data_protection', active: false },
+    { url: '#', label: 'cookies', active: false },
   ];
 
   const { t } = useTranslation('footer');
@@ -111,6 +111,9 @@ const Footer = () => {
           <FontAwesomeIcon icon={faTwitter} className='cursor-pointer hover:text-indigo-600 w-6' />
           <FontAwesomeIcon icon={faWhatsapp} className='cursor-pointer hover:text-indigo-600 w-6' />
         </div>
+      </div>
+      <div className='text-gray-600 flex items-center justify-center gap-x-3'>
+            Illustrations are made on <Link href="https://www.reshot.com/" className='cursor-pointer'>Reshot </Link>
       </div>
     </div>
   )

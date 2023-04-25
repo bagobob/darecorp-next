@@ -23,7 +23,7 @@ const Transition = (props: Props) => {
                 </div>
                 {!props.showButton && (
                     <div className='flex justify-center items-center pb-3'>
-                        <Link href="/contacts/contact-page">
+                        <Link href="/contact">
                             <button className='font-normal p-3'>{t('contact_us_button')}</button>
                         </Link>
                     </div>

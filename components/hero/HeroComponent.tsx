@@ -14,7 +14,6 @@ const HeroComponent = (props: Props) => {
     const { t } = useTranslation();
     const links = [
         { name: 'web', href: '/services/service/web-development' },
-        { name: 'it_consult', href: '/services/service/it-consulting' },
         { name: 'marketing', href: '/services/service/marketing-digital' },
     ]
     return (
